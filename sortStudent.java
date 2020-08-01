@@ -1,7 +1,5 @@
 import java.util.*; 
 import java.lang.*; 
-import java.util.*; 
-import java.lang.*; 
 import java.io.*; 
 import org.apache.commons.lang3.builder.CompareToBuilder;
 
@@ -18,7 +16,8 @@ public class Student {
       }
       //Sort function with camprator ;
       public static Collection<Student> sortStudent(Collection<Student> students, String[] criteria){
-        Collections.sort(students, new Comparator<Student>() {  
+          List<Student> st= new ArrayList<Student>(students);
+        Collections.sort(st, new Comparator<Student>() {  
             @Override  
             public int compare(Student s1, Student s2) { 
                 CompareToBuilder compareToBuilder =  new CompareToBuilder();
@@ -44,7 +43,7 @@ public class Student {
 
     public static void main (String[] args) 
     { 
-        Collection<Student> ar = new ArrayList<Student>(); 
+        ArrayList<Student> ar = new ArrayList<Student>(); 
         ar.add(new Student("akshay", 26, 34, "01")); 
         ar.add(new Student("abhay", 36, 35, "04")); 
         ar.add(new Student("akshay2", 36, 37, "03")); 
@@ -53,9 +52,11 @@ public class Student {
         String[] cr2 = {"name","age"};
         Collection<Student> s1 = sortStudent(ar, cr1);
         Collection<Student> s2 = sortStudent(ar, cr2);
-    }      
-}
-
-// time complexity of compare function O(n) with space complexity O(1)
+    }
+      
+      
+} 
+    
+    // time complexity of compare function O(n) with space complexity O(1)
 // time complexity of 
     
